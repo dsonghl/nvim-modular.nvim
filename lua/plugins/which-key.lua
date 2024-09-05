@@ -17,60 +17,45 @@ return {
   'folke/which-key.nvim',
   event = 'VimEnter', -- Sets the loading event to 'VimEnter'
 
-  -- Document existing key chains
-  -- opts = {
-  --   spec = {
-  --     { '<leader>l', desc = '[L]anguage', mode = { 'x', 'n' } },
-  --     -- { '<leader>d', desc = '[D]ocument', mode = { 'x', 'n' } },
-  --     { '<leader>r', desc = '[R]emove', mode = { 'x', 'n' } },
-  --     { '<leader>s', desc = '[S]earch', mode = { 'x', 'n' } },
-  --     { '<leader>w', desc = '[W]orkspace', mode = { 'x', 'n' } },
-  --     { '<leader>t', desc = '[T]oggle', mode = { 'x', 'n' } },
-  --     { '<leader>h', desc = 'Git [H]unk', mode = { 'v', 'n' } },
-  --     { '<leader>x', desc = 'Quick Fix', mode = { 'x', 'n' } },
-  --   },
-  -- },
-  config = function() -- This is the function that runs, AFTER loading
-    require('which-key').setup {
-      icons = {
-        -- set icon mappings to true if you have a Nerd Font
-        mappings = vim.g.have_nerd_font,
-        -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
-        -- default whick-key.nvim defined Nerd Font icons, otherwise define a string table
-        keys = vim.g.have_nerd_font and {} or {
-          Up = '<Up> ',
-          Down = '<Down> ',
-          Left = '<Left> ',
-          Right = '<Right> ',
-          C = '<C-…> ',
-          M = '<M-…> ',
-          D = '<D-…> ',
-          S = '<S-…> ',
-          CR = '<CR> ',
-          Esc = '<Esc> ',
-          ScrollWheelDown = '<ScrollWheelDown> ',
-          ScrollWheelUp = '<ScrollWheelUp> ',
-          NL = '<NL> ',
-          BS = '<BS> ',
-          Space = '<Space> ',
-          Tab = '<Tab> ',
-          F1 = '<F1>',
-          F2 = '<F2>',
-          F3 = '<F3>',
-          F4 = '<F4>',
-          F5 = '<F5>',
-          F6 = '<F6>',
-          F7 = '<F7>',
-          F8 = '<F8>',
-          F9 = '<F9>',
-          F10 = '<F10>',
-          F11 = '<F11>',
-          F12 = '<F12>',
-        },
+  opts = {
+    icons = {
+      -- set icon mappings to true if you have a Nerd Font
+      mappings = vim.g.have_nerd_font,
+      -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
+      -- default whick-key.nvim defined Nerd Font icons, otherwise define a string table
+      keys = vim.g.have_nerd_font and {} or {
+        Up = '<Up> ',
+        Down = '<Down> ',
+        Left = '<Left> ',
+        Right = '<Right> ',
+        C = '<C-…> ',
+        M = '<M-…> ',
+        D = '<D-…> ',
+        S = '<S-…> ',
+        CR = '<CR> ',
+        Esc = '<Esc> ',
+        ScrollWheelDown = '<ScrollWheelDown> ',
+        ScrollWheelUp = '<ScrollWheelUp> ',
+        NL = '<NL> ',
+        BS = '<BS> ',
+        Space = '<Space> ',
+        Tab = '<Tab> ',
+        F1 = '<F1>',
+        F2 = '<F2>',
+        F3 = '<F3>',
+        F4 = '<F4>',
+        F5 = '<F5>',
+        F6 = '<F6>',
+        F7 = '<F7>',
+        F8 = '<F8>',
+        F9 = '<F9>',
+        F10 = '<F10>',
+        F11 = '<F11>',
+        F12 = '<F12>',
       },
-    }
+    },
     -- Document existing key chains
-    require('which-key').add {
+    spec = {
       { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
       { '<leader>d', group = '[D]ocument' },
       { '<leader>r', group = '[R]ename' },
@@ -81,6 +66,6 @@ return {
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>l', desc = '[L]anguage', mode = { 'x', 'n' } },
       { '<leader>x', desc = 'Quick Fix', mode = { 'x', 'n' } },
-    }
-  end,
+    },
+  },
 }
