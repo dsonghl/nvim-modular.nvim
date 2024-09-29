@@ -78,3 +78,13 @@ function _G.set_terminal_keymaps()
 end
 
 vim.cmd 'autocmd! TermOpen term://* lua set_terminal_keymaps()'
+
+-- Add semicolon to end of line with <leader>;
+vim.keymap.set('n', '<leader>;', 'mmA;<Esc>`m', { desc = 'Custom: Add semicolon to end of line' })
+-- vim.keymap.set('n', '<leader>;', [[A;<Esc>]], { desc = 'Custom: Add semicolon to end of line' })
+vim.keymap.set(
+  'v',
+  '<leader>;',
+  ':s/\\([^;]\\)$/\\1;/<CR>',
+  { desc = 'Custom: Add semicolon to end of each line in visual selection excluding lines that already have semicolon' }
+)
