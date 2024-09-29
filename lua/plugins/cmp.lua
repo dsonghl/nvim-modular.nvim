@@ -79,8 +79,8 @@ return {
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
           ['<CR>'] = cmp.mapping.confirm { select = true },
-          -- ['<Tab>'] = cmp.mapping.select_next_item(),
-          -- ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+          ['<Tab>'] = cmp.mapping.select_next_item(),
+          ['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
@@ -110,31 +110,31 @@ return {
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
 
           -- supertab -> https://www.lazyvim.org/configuration/recipes#supertab
-          ['<Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
-              cmp.select_next_item()
-            elseif vim.snippet.active { direction = 1 } then
-              vim.schedule(function()
-                vim.snippet.jump(1)
-              end)
-            elseif has_words_before() then
-              cmp.complete()
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
-          ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif vim.snippet.active { direction = -1 } then
-              vim.schedule(function()
-                vim.snippet.jump(-1)
-              end)
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
+          -- ['<Tab>'] = cmp.mapping(function(fallback)
+          --   if cmp.visible() then
+          --     -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
+          --     cmp.select_next_item()
+          --   elseif vim.snippet.active { direction = 1 } then
+          --     vim.schedule(function()
+          --       vim.snippet.jump(1)
+          --     end)
+          --   elseif has_words_before() then
+          --     cmp.complete()
+          --   else
+          --     fallback()
+          --   end
+          -- end, { 'i', 's' }),
+          -- ['<S-Tab>'] = cmp.mapping(function(fallback)
+          --   if cmp.visible() then
+          --     cmp.select_prev_item()
+          --   elseif vim.snippet.active { direction = -1 } then
+          --     vim.schedule(function()
+          --       vim.snippet.jump(-1)
+          --     end)
+          --   else
+          --     fallback()
+          --   end
+          -- end, { 'i', 's' }),
         },
         sources = {
           {
