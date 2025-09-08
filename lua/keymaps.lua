@@ -96,3 +96,8 @@ vim.keymap.set(
   ':s/\\([^,]\\)$/\\1,<CR>',
   { desc = 'Custom: Add comma to end of each line in visual selection excluding lines that already have comma' }
 )
+
+-- Diffview
+vim.keymap.set('n', '<leader>do', '<cmd>DiffviewOpen<CR>', { desc = 'Open Diffview' })
+vim.keymap.set('n', '<leader>dc', '<cmd>DiffviewClose<CR>', { desc = 'Close Diffview' })
+vim.keymap.set('n', '<leader>dh', '<cmd>DiffviewFileHistory %<CR>', { desc = 'File History' })
